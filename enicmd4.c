@@ -22,7 +22,7 @@ int main(int argc, char *argv[]){
 		
 		for(i=0;i<100;i++){
             if(x[i]==EOF)break;
-            fprintf(fout,"%c",x[i]);
+            fprintf(fout,"%c",x[i]+1);
             
         }
 
