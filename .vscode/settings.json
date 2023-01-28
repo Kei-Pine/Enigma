@@ -1,0 +1,14 @@
+{
+    "terminal.integrated.profiles.windows": {
+      "pwsh": {
+        "path": [
+          // cmdをまず起動
+          "${env:windir}\\Sysnative\\cmd.exe",
+          "${env:windir}\\System32\\cmd.exe"
+        ],
+        // pwshを起動させる. "/c" をつけることでコマンド実行後にcmdは終了.
+        "args": ["/c", "%USERPROFILE%\\scoop\\apps\\pwsh\\current\\pwsh.exe"],
+        "icon": "terminal-powershell"
+      },
+    "terminal.integrated.defaultProfile.windows": "pwsh"
+  }
