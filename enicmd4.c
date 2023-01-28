@@ -17,13 +17,13 @@ int main(int argc, char *argv[]){
 
 		for(i=0;i<100;i++){
             x[i]=fgetc(fin);
-            if(x[i]==10)break;
+            if(x[i]==EOF)break;
 		}
 		
 		for(i=0;i<100;i++){
-
-        fprintf(fout,"%c",x[i]);
-            if(x[i]==10)break;
+            if(x[i]==EOF)break;
+            fprintf(fout,"%c",x[i]);
+            
         }
 
 
