@@ -29,6 +29,6 @@ int main(int argc, char *argv[]){
 
         fclose(fin);
         fclose(fout);
-        printf("file size is %d",i);
+        printf("new file includes %d letters\n",i);
         return 0;
         }
