@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+#include<windows.h>
 int main(int argc, char *argv[]){
 
         FILE *fin, *fout;
@@ -19,16 +20,21 @@ int main(int argc, char *argv[]){
         }
         fseek(fin,0,SEEK_SET);
         int x[file_length],i,g;
+        char spin[4] = {'|', '/', '-', '\\'};
         printf("Type in your secret digit(natural number)");
         scanf("%d",&g);
                 
-            for(i=0;i<=file_length;i++){
+            for(i=0;i<file_length;i++){
             x[i]=fgetc(fin);
-            puts("still working\n");
+            printf("\r Loading %c %d%%", spin[i % 4], (i*100/file_length)+1);
+            fflush(stdout);
+            Sleep(file_length);
             }
         
-   
-            for(i=0;i<=file_length;i++){
+        printf("\n All Done!\n");
+
+
+            for(i=0;i<file_length;i++){
                 fprintf(fout,"%c",x[i]+g);
                 }
             printf("%d letters icluded\n",i);
