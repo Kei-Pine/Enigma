@@ -3,7 +3,7 @@
 int main(int argc, char *argv[]){
 		
         FILE *fin, *fout;
-		int x[100],i;
+		int x[1000],i;
         if(argc!=3)puts("wrong cmd!\nformat::cmdname inputFile outputFile");
         if((fin=fopen(argv[1],"r"))== NULL){
                 printf("couldnt open\n");
@@ -15,12 +15,12 @@ int main(int argc, char *argv[]){
         }
 
 
-		for(i=0;i<100;i++){
+		for(i=0;i<1000;i++){
             x[i]=fgetc(fin);
             if(x[i]==EOF)break;
 		}
 		
-		for(i=0;i<100;i++){
+		for(i=0;i<1000;i++){
             if(x[i]==EOF)break;
             fprintf(fout,"%c",x[i]-1);
             
@@ -29,5 +29,6 @@ int main(int argc, char *argv[]){
 
         fclose(fin);
         fclose(fout);
-                return 0;
+        printf("%d letters icluded\n",i);
+        return 0;
         }
