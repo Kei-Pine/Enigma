@@ -19,24 +19,21 @@ int main(int argc, char *argv[]){
                 return 1;
         }
         fseek(fin,0,SEEK_SET);
-        int x[file_length],i,g;
+        int c,i,g;
         char spin[4] = {'|', '/', '-', '\\'};
         printf("Type in your secret digit(natural number)");
         scanf("%d",&g);
                 
             for(i=0;i<file_length;i++){
-            x[i]=fgetc(fin);
-            printf("\r Loading %c %d%%", spin[i % 4], (i*100/file_length)+1);
+            c=fgetc(fin);
+            printf("\r Loading %c %d %%", spin[i % 4],(i*100/file_length)+1);
             fflush(stdout);
             Sleep(file_length);
+
+            fprintf(fout,"%c",c+g);
             }
         
         printf("\n All Done!\n");
-
-
-            for(i=0;i<file_length;i++){
-                fprintf(fout,"%c",x[i]+g);
-                }
             printf("%d letters icluded\n",i);
             printf("File length: %ld bytes\n", file_length);
     
