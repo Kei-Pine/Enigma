@@ -28,12 +28,10 @@ int main(int argc, char *argv[]){
             c=fgetc(fin);
             printf("\r Loading %c %d %%", spin[i % 4],(i*100/file_length)+1);
             fflush(stdout);
-            Sleep(file_length);
-
             fprintf(fout,"%c",c+g);
             }
         
-        printf("\n All Done!\n");
+            printf("\n All Done!\n");
             printf("%d letters icluded\n",i);
             printf("File length: %ld bytes\n", file_length);
     
